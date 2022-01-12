@@ -1,5 +1,1 @@
-from .beaver import Beaver
-from .duck import Duck
-from .fish import Fish
-from .frog import Frog
-from .turtle import Turtle
+from .swimming_critters import (Beaver, Duck, Fish, Frog, Turtle)

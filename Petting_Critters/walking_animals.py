@@ -1,95 +1,62 @@
 from datetime import date
 
-class Alpaca:
-    def __init__(self, name, species, shift, food, chip_num):
+
+class Animal:
+    def __init__(self, name, species, food, chip_num):
         self.name = name
         self.species = species
-        self.shift = shift
-        self.walking = True
-        self.date_added = date.today()
         self.food = food
         self.__chip_number = chip_num
+        self.date_added = date.today()
+
+    def __str__(self):
+        return f'{self.name} is a {self.species}'
+
+    def feed(self):
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
 
     @property
-    def chip_num(self):
-        try:
-            return self.__chip_number
-        except AttributeError:
-            return 0
-    
-    @chip_num.setter
-    def chip_num(self, new_num):
-        if type(new_num) is int:
-            self.__chip_num = new_num
-        else:
-            raise TypeError('Please provide an integer for the chip number')
+    def chip_number(self):
+        return self.__chip_number
 
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
+    @chip_number.setter
+    def chip_number(self, num):
+        pass
 
 
-class Goat:
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
-        self.shift = shift
+class Alpaca(Animal):
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
-
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
 
-class Pig:
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
-        self.shift = shift
+class Goat(Animal):
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
-
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
 
-class Sheep:
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
-        self.shift = shift
+class Pig(Animal):
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
-
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
 
 
-class Tortoise:
-    def __init__(self, name, species, shift, food):
-        self.name = name
-        self.species = species
-        self.shift = shift
+class Sheep(Animal):
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
-        self.date_added = date.today()
-        self.food = food
+
+
+class Tortoise(Animal):
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift  # stays on because not all animals have shifts
+        self.walking = True
 
     def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f'{self.name} is a {self.species}'
+        print(f'{self.name} was fed {self.food} in a non-tippable bowl on {date.today().strftime("%m/%d/%Y")}')
