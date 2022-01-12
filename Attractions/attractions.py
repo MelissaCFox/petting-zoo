@@ -8,6 +8,10 @@ class PettingZoo:
     def add(self, animal):
         self.animals.append(animal)
 
+    @property
+    def last_critter_added(self):
+        return self.animals[-1]
+
 
 class SnakePit:
 
