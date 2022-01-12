@@ -1,1 +1,1 @@
-from .walking_animals import Alpaca, Goat, Pig, Sheep, Tortoise
+from .walking_animals import Alpaca, Goat, Pig, Sheep, Tortoise, Goose

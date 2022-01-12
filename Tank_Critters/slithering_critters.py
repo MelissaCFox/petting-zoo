@@ -1,4 +1,6 @@
 from datetime import date
+from Movements import Slithering, Swimming
+
 
 class Animal:
     def __init__(self, name, species, food, chip_num):
@@ -22,27 +24,27 @@ class Animal:
     def chip_number(self, num):
         pass
 
-class Hellbender(Animal):
+class Hellbender(Animal, Slithering):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.slithering = True
 
-class Legless_Lizard(Animal):
+class Legless_Lizard(Animal, Slithering):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.slithering = True
 
-class Salamander(Animal):
+class Salamander(Animal, Slithering, Swimming):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.slithering = True
 
-class Snake(Animal):
+class Snake(Animal, Slithering):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.slithering = True
 
-class Worm(Animal):
+class Worm(Animal, Slithering):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.slithering = True

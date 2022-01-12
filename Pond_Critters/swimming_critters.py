@@ -1,4 +1,6 @@
 from datetime import date
+from Movements import Walking, Swimming
+
 
 class Animal:
     def __init__(self, name, species, food, chip_num):
@@ -23,31 +25,31 @@ class Animal:
         pass
 
 
-class Beaver(Animal):
+class Beaver(Animal, Walking, Swimming):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.swimming = True
 
 
-class Duck(Animal):
+class Duck(Animal, Walking, Swimming):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.swimming = True
 
 
-class Fish(Animal):
+class Fish(Animal, Swimming):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.swimming = True
 
 
-class Frog(Animal):
+class Frog(Animal, Swimming):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.swimming = True
 
 
-class Turtle(Animal):
+class Turtle(Animal, Swimming):
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.swimming = True

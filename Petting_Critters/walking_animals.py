@@ -1,4 +1,5 @@
 from datetime import date
+from Movements import Walking, Swimming
 
 
 class Animal:
@@ -24,35 +25,51 @@ class Animal:
         pass
 
 
-class Alpaca(Animal):
+class Goose(Animal, Walking, Swimming):
+
+    def __init__(self, name, species, food, chip_num):
+        # No more super() when initializing multiple base classes
+        Animal.__init__(self, name, species, food, chip_num)
+        Swimming.__init__(self)
+        Walking.__init__(self)
+        # no more self.swimming = True
+    
+    def honk(self): 
+        print(f"{self.name} honks. A lot")
+
+    def run(self):
+        print(f'{self.name} waddles quickly.')
+
+
+class Alpaca(Animal, Walking):
     def __init__(self, name, species, shift, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
 
 
-class Goat(Animal):
+class Goat(Animal, Walking):
     def __init__(self, name, species, shift, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
 
 
-class Pig(Animal):
+class Pig(Animal, Walking):
     def __init__(self, name, species, shift, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
 
 
-class Sheep(Animal):
+class Sheep(Animal, Walking):
     def __init__(self, name, species, shift, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.shift = shift  # stays on because not all animals have shifts
         self.walking = True
 
 
-class Tortoise(Animal):
+class Tortoise(Animal, Walking):
     def __init__(self, name, species, shift, food, chip_num):
         super().__init__(name, species, food, chip_num)
         self.shift = shift  # stays on because not all animals have shifts

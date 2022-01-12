@@ -1,1 +1,1 @@
-from .attractions import (PettingZoo, SnakePit, Wetlands)
+from .attractions import (PettingZoo, SnakePit, Wetlands, Attraction)
