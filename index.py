@@ -36,3 +36,10 @@ hellion_hill.add(bob)
 
 hellion_hill.add(sean)
 
+queenie = Salamander("Queenie", "red salamander", "tiny snails", 976)
+charlize = Salamander("Charlize", "yellow salamander", "medium snails", 606)
+
+hellion_hill.add(queenie)
+pit.add(charlize)
+yard.add(queenie)
+
